@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2023 Conference App</title>
+<style>
+    .fallback {
+      display: none;
+      text-align: center;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+</style>
+</head>
+<body>
+
+ 
+
+<div class="fallback" id="fallback">
+<h2>Unsupported Device</h2>
+<p>It seems like you're using an unsupported device. Please visit this page using an Android or iOS device.</p>
+<p>Alternatively, you can manually visit the app stores to download the app:</p>
+<ul>
+<li><a href="https://play.google.com/store/apps/details?id=com.wearemci.ahapp" target="_blank">Google Play Store</a></li>
+<li><a href="https://apps.apple.com/us/app/ana-enterprise-events/id1457094807" target="_blank">Apple App Store</a></li>
+</ul>
+</div>
+
+ 
+
+<script>
+  // Script to detect the device and redirect to the appropriate app store
+  (function() {
+    var ua = navigator.userAgent.toLowerCase();
+    var isAndroid = ua.indexOf("android") > -1;
+    var isiOS = /ipad|iphone|ipod/.test(ua) && !window.MSStream;
+
+ 
+
+    if (isAndroid) {
+      // Redirect to Google Play Store
+      window.location.href = "https://play.google.com/store/apps/details?id=com.wearemci.ahapp";
+    } else if (isiOS) {
+      // Redirect to Apple App Store
+      window.location.href = "https://apps.apple.com/us/app/ana-enterprise-events/id1457094807";
+    } else {
+      // Display fallback content for unsupported devices
+      document.getElementById('fallback').style.display = 'block';
+    }
+  })();
+</script>
+
+ 
+
+</body>
+</html>
